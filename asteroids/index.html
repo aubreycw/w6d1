@@ -16,8 +16,8 @@
   <script src="lib/ship.js"></script>
   <script>
   var canvasEl = document.getElementById("game-canvas");
-  canvasEl.height = window.innerHeight;
-  canvasEl.width = window.innerWidth;
+  canvasEl.height = window.innerHeight * 0.95;
+  canvasEl.width = window.innerWidth * 0.95;
   gameX = new Asteroids.Game(
     canvasEl.width,
     canvasEl.height

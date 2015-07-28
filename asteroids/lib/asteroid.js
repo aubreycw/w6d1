@@ -3,8 +3,9 @@
 
 
 var Asteroid = Asteroids.Asteroid = function (pos, game) {
-    vel = Asteroids.Util.randomVec(Asteroid.LENGTH)
-    options = {pos: pos, color: Asteroid.COLOR, radius: Asteroid.RADIUS, vel: vel, game: game}
+    var vel = Asteroids.Util.randomVec(Asteroid.LENGTH)
+    var color = randomGreen();
+    options = {pos: pos, color: color, radius: Asteroid.RADIUS, vel: vel, game: game}
     Asteroids.MovingObject.call(this, options)
   };
 
@@ -20,5 +21,14 @@ var Asteroid = Asteroids.Asteroid = function (pos, game) {
       otherObject.relocate();
     }
   };
+
+  var HEX_DIGITS = "0123456789ABCDEF"
+  function randomGreen(){
+    var color = "#66F"
+    for (var i = 0; i < 3; i++) {
+      color += HEX_DIGITS[Math.floor((Math.random() * 16))];
+    }
+    return color;
+  }
 
 })();

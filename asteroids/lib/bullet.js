@@ -10,7 +10,7 @@
 
     Bullet.RADIUS = 5;
     //todo
-    Bullet.COLOR = "black"
+    Bullet.COLOR = "#FFFF00"
 
     Bullet.prototype.collideWith = function (otherObject) {
       if (otherObject instanceof Asteroids.Asteroid){

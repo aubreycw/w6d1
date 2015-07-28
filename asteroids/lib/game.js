@@ -14,7 +14,7 @@
     this.bullets = []
   }
 
-    Game.NUM_ASTEROIDS = 1;
+    Game.NUM_ASTEROIDS = 10;
 
   Game.prototype.addAsteroids = function (first_argument) {
     for (var i = 0; i < Game.NUM_ASTEROIDS; i++) {
@@ -39,8 +39,9 @@
     };
   };
 
-  Game.prototype.draw = function (ctx) {
-    ctx.clearRect(0, 0, this.dimX, this.dimY);
+  Game.prototype.draw = function (ctx, img) {
+    //ctx.clearRect(0, 0, this.dimX, this.dimY);
+    ctx.drawImage(img, 0, 0);
     for (var i = 0; i < this.allObjects().length; i++) {
       var object = this.allObjects()[i]
       object.draw(ctx);
